@@ -15,12 +15,12 @@
 
 <body>
 
-    <button id="init">Init</button>
-    <button id="connect">Connect</button>
+    <button id="init" onclick="initSdp()">Init</button>
+    <button id="connect" onclick="connectSdp()">Connect</button>
     <video></video>
 
     <script>
-        alert("vidoe", navigator.toString());
+        alert("vidoe", navigato);
         var init = false;
         var stream;
         var mes;
@@ -37,7 +37,8 @@
             mes = m;
         })
 
-        document.getElementById('init').addEventListener('click', (e) => {
+        // document.getElementById('init').addEventListener('click', (e) => {
+            function initSdp(){
             const p = new SimplePeer({
                 initiator: true,
                 trickle: false,
@@ -78,8 +79,9 @@
             })
 
 
-        })
-        document.getElementById('connect').addEventListener('click', (e) => {
+        }
+        // document.getElementById('connect').addEventListener('click', (e) => {
+            function connectSdp(){
             if (init == false) {
                 const p = new SimplePeer({
                     initiator: false,
@@ -115,7 +117,7 @@
 
 
 
-        })
+        };
 
 
 
